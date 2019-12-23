@@ -1,5 +1,5 @@
-/frontend/node_modules
-/backend/node_modules
-/backend/logs
-/frontend/dist
+/inzinfrontend/node_modules
+/inzinbackend/node_modules
+/inzinbackend/logs
+/inzinfrontend/dist
 
