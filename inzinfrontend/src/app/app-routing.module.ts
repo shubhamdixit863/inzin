@@ -4,7 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-
+  {
+    path:'',
+    loadChildren:'./website/website.module#WebsiteModule'
+  },
  
   {
     path: 'admin',
