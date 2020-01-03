@@ -307,7 +307,7 @@ header.header-small .header-top {
 	text-decoration: underline !important;
 }
 
-.navbar {
+.navbarh  {
 	padding: 0;
 }
 
@@ -324,12 +324,12 @@ header.header-small .header-top {
 	display: inline-block;
 }
 
-.header-bottom .bottom-left ul.navbar-nav li {
+.header-bottom .bottom-left ul.navbarh -nav li {
 	display: inline-block;
 	padding: 0 10px;
 }
 
-.header-bottom .bottom-left ul.navbar-nav li a {
+.header-bottom .bottom-left ul.navbarh -nav li a {
 	padding: 0 10px;
 	line-height: 24px;
 	font-weight: 600;
@@ -339,12 +339,12 @@ header.header-small .header-top {
 	padding-bottom: 16px;
 }
 
-.header-bottom .bottom-left ul.navbar-nav li a:hover {
+.header-bottom .bottom-left ul.navbarh -nav li a:hover {
 	color: #ed5623;
 	border-color: #fdb531;
 }
 
-.header-bottom .bottom-left ul.navbar-nav li.nav-item.active a {
+.header-bottom .bottom-left ul.navbarh -nav li.nav-item.active a {
 	color: #000;
 	border-color: #fdb531;
 }
@@ -2242,10 +2242,10 @@ textarea.form-control {
 /* ================================================== */
 
 @media screen and (max-width: 1279px) {
-	.header-bottom .bottom-left ul.navbar-nav li {
+	.header-bottom .bottom-left ul.navbarh -nav li {
 		padding: 0 12px;
 	}
-	.header-bottom .bottom-left ul.navbar-nav li a {
+	.header-bottom .bottom-left ul.navbarh -nav li a {
 		padding: 0 0 16px 0;
 	}
 	.header-bottom .bottom-right ul li a {
@@ -2385,7 +2385,7 @@ textarea.form-control {
 		line-height: 22px;
 		padding: 10px 20px;
 	}
-	.header-bottom .bottom-left ul.navbar-nav li {
+	.header-bottom .bottom-left ul.navbarh -nav li {
 		padding: 0 5px;
 	}
 	.header-bottom .bottom-right ul li a {
@@ -2396,7 +2396,7 @@ textarea.form-control {
 		height: 25px;
 		margin-left: 5px;
 	}
-	.header-bottom .bottom-left ul.navbar-nav li a {
+	.header-bottom .bottom-left ul.navbarh -nav li a {
 		padding: 0 0 12px 0;
 		font-size: 14px;
 	}
@@ -2499,16 +2499,16 @@ textarea.form-control {
 		display: none;
 	}
 	/* header{background:#18196e;} */
-	.navbar-toggler-icon {
+	.navbarh -toggler-icon {
 		background-image: url(../images/menubar.png);
 		height: 25px;
 		width: 35px;
 		background-size: contain;
 	}
-	.navbar-brand img {
+	.navbarh -brand img {
 		max-width: 185px;
 	}
-	.navbar-toggler {
+	.navbarh -toggler {
 		border-radius: 0;
 		padding: 0;
 		border: 0;
@@ -2517,8 +2517,8 @@ textarea.form-control {
 	.header-bottom .bottom-left {
 		width: 100%;
 	}
-	.navbar-toggler:focus,
-	.navbar-toggler:hover {
+	.navbarh -toggler:focus,
+	.navbarh -toggler:hover {
 		outline: none;
 		text-decoration: none;
 		border: 0;
@@ -2527,15 +2527,15 @@ textarea.form-control {
 	.header-top {
 		display: none;
 	}
-	.header-bottom .bottom-left ul.navbar-nav li {
+	.header-bottom .bottom-left ul.navbarh -nav li {
 		padding: 10px 0;
 		display: block;
 		border-bottom: #fff 1px solid;
 	}
-	.header-bottom .bottom-left ul.navbar-nav li:last-child a {
+	.header-bottom .bottom-left ul.navbarh -nav li:last-child a {
 		padding-bottom: 0;
 	}
-	.header-bottom .bottom-left ul.navbar-nav li a {
+	.header-bottom .bottom-left ul.navbarh -nav li a {
 		padding: 0 10px;
 		display: block;
 		border-bottom: 0;
