@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/home/common/bootstrap/css/bootstrap.min.css";
+@import "assets/home/common/owl-carousel/css/owl.carousel.min.css";
+@import "assets/home/common/fancybox/jquery.fancybox.min.css";
+@import "assets/admin/css/style.css";
+@import "assets/home/css/style.css";

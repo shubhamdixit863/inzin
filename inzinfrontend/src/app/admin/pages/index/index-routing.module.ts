@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { IndexPageComponent } from './index-page/index-page.component';
 
 
 const routes: Routes = [
-  
+
   {
-    path: 'login',
-    loadChildren: './pages/login/login.module#LoginModule'
-  },
-  {
-    path: 'dashboard',
-    loadChildren: './pages/index/index.module#IndexModule'
-  },
+    path: '',
+    component: IndexPageComponent
+  }
 
 ];
 
@@ -19,4 +16,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminRoutingModule { }
+export class IndexRoutingModule { }
