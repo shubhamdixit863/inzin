@@ -2,4 +2,5 @@
 /inzinbackend/node_modules
 /inzinbackend/logs
 /inzinfrontend/dist
+/inzinbackend/.env
 
