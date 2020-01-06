@@ -13,7 +13,17 @@ const userSchema = new Schema({
     type: 'String',
     required: true,
     trim: true
+  },
+  role: {
+    type: 'String',
+    required: true,
+    trim: true
+  },
+  isactive: {
+    type: 'Boolean',
+    required: true,
+    trim: true
   }
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('user', userSchema);

@@ -8,6 +8,7 @@ indexContoller.registerUser=async(req,res)=>{
 
 
 indexContoller.userLogin=async(req,res)=>{
+    console.log(req.body.username,req.body.password)
     let response=await indexService.getUserByUsername(req.body.username,req.body.password);
     res.json(response);
 }
