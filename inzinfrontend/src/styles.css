@@ -4,6 +4,7 @@
 @import "assets/home/common/fancybox/jquery.fancybox.min.css";
 @import "assets/admin/css/style.css";
 @import "assets/home/css/style.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

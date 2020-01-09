@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-settings',
@@ -8,9 +8,11 @@ import { FormGroup } from '@angular/forms';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
   settingsForm: FormGroup
   ngOnInit() {
+
+   
   }
 
 }
