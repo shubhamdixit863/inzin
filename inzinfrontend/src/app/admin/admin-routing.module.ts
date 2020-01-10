@@ -13,17 +13,17 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: './pages/index/index.module#IndexModule',
-    canActivate:[],
+    canActivate:[AuthGuard],
   },
   {
     path: 'users',
     loadChildren: './pages/users/users.module#UsersModule',
-    canActivate:[],
+    canActivate:[AuthGuard],
   },
   {
     path: 'products',
     loadChildren: './pages/products/products.module#ProductsModule',
-    canActivate:[],
+    canActivate:[AuthGuard],
   },
 
   {

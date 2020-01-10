@@ -30,5 +30,6 @@ import {MatFormFieldModule,MatSelectModule,MatInputModule,} from '@angular/mater
   
   ]
   ,exports:[FooterComponent, NavbarComponent, SidebarComponent, SettingsComponent,MatTableModule,MatSnackBarModule, MatPaginatorModule,MatSortModule,MatFormFieldModule,MatSelectModule,MatInputModule] // This export is necessary such that footer can be used in every componet under page
+  ,providers: [],
 })
 export class SharedModule { }

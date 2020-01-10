@@ -5,7 +5,6 @@
  */
 
 const jwt = require("jsonwebtoken");
-const mongoose=require("mongoose");
 const User=require('../models/users');
 
 const SimpleNodeLogger = require('simple-node-logger'),
@@ -14,14 +13,9 @@ const SimpleNodeLogger = require('simple-node-logger'),
         timestampFormat:'YYYY-MM-DD HH:mm:ss.SSS'
     },
 log = SimpleNodeLogger.createSimpleLogger( opts );
-const indexService={};
+const adminService={};
 
-mongoose.connect(process.env.MONGO_LOCAL_CONN_URL)
-  .then(() => {
-  // log.info("Mongodb Connected");
-  }).catch(err =>  log.error("Mongoose Connection Error",err));
-
-indexService.getUserByUsername=async(username,password)=>{
+adminService.getUserByUsername=async(username,password)=>{
     try {
         let user = await User.findOne({
           username: username,
@@ -32,7 +26,7 @@ indexService.getUserByUsername=async(username,password)=>{
         } 
         else {
           // checking password here for user
-          if (password == user.password && user.role=="admin") {
+          if (password == user.password) {
     
            
             // authentication success
@@ -41,7 +35,7 @@ indexService.getUserByUsername=async(username,password)=>{
               "role": user.role,
               "time":new Date()
               
-            }, "black", {
+            }, secretkey, {
               expiresIn: "1h"
             })
     
@@ -65,8 +59,7 @@ indexService.getUserByUsername=async(username,password)=>{
           }
         }
       } catch (err) {
-        console.log(err);
-       // log.error({type:"error while requesting username",date:new Date(),error:err});
+        log.error({type:"error while requesting username",date:new Date(),error:err});
         return{
             status:false,
             message:"Internal Server Error Occurred"
@@ -77,5 +70,32 @@ indexService.getUserByUsername=async(username,password)=>{
 
 }
 
+adminService.getAllUsers=async()=>{
 
-module.exports=indexService;
+    return  await User.find();
+
+}
+
+adminService.saveUser=async(...userdata)=>{
+  try{
+    let user =new User({
+
+        username:userdata[0],
+        password:userdata[1],
+        role:userdata[2],
+        isactive:userdata[3]
+  
+      });
+  
+      return await user.save();
+  }
+    catch(err)
+    {
+        log.error({type:"error while saving new user"+userdata[0],date:new Date(),error:err});
+    }
+   
+
+}
+
+
+module.exports=adminService;
