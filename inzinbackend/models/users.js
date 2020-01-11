@@ -9,6 +9,8 @@ const userSchema = new Schema({
     trim: true,
     unique: true
   },
+  email:String,
+  name:String,
   password: {
     type: 'String',
     required: true,
@@ -23,6 +25,13 @@ const userSchema = new Schema({
     type: 'Boolean',
     required: true,
     trim: true
+  },
+  address:{
+    district: String,
+    state:String,
+    street: String,
+    houseNumber: String
+    
   }
 });
 

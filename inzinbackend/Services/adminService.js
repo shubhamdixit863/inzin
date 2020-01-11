@@ -72,18 +72,22 @@ adminService.getUserByUsername=async(username,password)=>{
 
 adminService.getAllUsers=async()=>{
 
-    return  await User.find();
+    
+    return  await User.find({},{_id:0});
 
 }
 
 adminService.saveUser=async(...userdata)=>{
+  console.log(userdata)
   try{
     let user =new User({
 
         username:userdata[0],
         password:userdata[1],
         role:userdata[2],
-        isactive:userdata[3]
+        isactive:userdata[3],
+        name:userdata[4],
+        email:userdata[5]
   
       });
   
@@ -92,8 +96,16 @@ adminService.saveUser=async(...userdata)=>{
     catch(err)
     {
         log.error({type:"error while saving new user"+userdata[0],date:new Date(),error:err});
+        return null;
     }
    
+
+}
+
+adminService.checkExistingCredentials=async(credential,type)=>{
+  
+  return await User.findOne({type:credential});
+
 
 }
 

@@ -12,9 +12,14 @@ import {MatButtonModule} from '@angular/material/button';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {MatFormFieldModule,MatSelectModule,MatInputModule,} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ErrorvisualPipe } from './pipes/errorvisual.pipe';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
-  declarations: [FooterComponent, NavbarComponent, SidebarComponent, SettingsComponent],
+  declarations: [FooterComponent, NavbarComponent, SidebarComponent, SettingsComponent, ErrorvisualPipe],
   imports: [
     CommonModule,
     MatSnackBarModule, // Now this will be available in all th modules under admin,
@@ -25,11 +30,17 @@ import {MatFormFieldModule,MatSelectModule,MatInputModule,} from '@angular/mater
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
-    MatFormFieldModule,MatSelectModule,MatInputModule
+    MatFormFieldModule,MatSelectModule,MatInputModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatRadioModule
   
   
   ]
-  ,exports:[FooterComponent, NavbarComponent, SidebarComponent, SettingsComponent,MatTableModule,MatSnackBarModule, MatPaginatorModule,MatSortModule,MatFormFieldModule,MatSelectModule,MatInputModule] // This export is necessary such that footer can be used in every componet under page
+  // export is very important such that theese modules can be used in other components as well
+  ,exports:[MatRadioModule,MatSelectModule,FooterComponent,FormsModule, ReactiveFormsModule,ErrorvisualPipe, NavbarComponent,MatTooltipModule, SidebarComponent, SettingsComponent,MatDialogModule,MatButtonModule,MatTableModule,MatSnackBarModule, MatPaginatorModule,MatSortModule,MatFormFieldModule,MatSelectModule,MatInputModule,MatIconModule] // This export is necessary such that footer can be used in every componet under page
   ,providers: [],
 })
 export class SharedModule { }

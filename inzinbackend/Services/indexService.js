@@ -16,7 +16,7 @@ const SimpleNodeLogger = require('simple-node-logger'),
 log = SimpleNodeLogger.createSimpleLogger( opts );
 const indexService={};
 
-mongoose.connect(process.env.MONGO_LOCAL_CONN_URL)
+mongoose.connect(process.env.MONGO_LOCAL_CONN_URL,{ useUnifiedTopology: true, useNewUrlParser: true  })
   .then(() => {
   // log.info("Mongodb Connected");
   }).catch(err =>  log.error("Mongoose Connection Error",err));

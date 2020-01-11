@@ -16,19 +16,28 @@
           <!-- partial -->
          
           <div class="content-wrapper">
-            <div class="col-md-6"  style="margin-top: 200px;">
+            <div class="col-md-2" style="margin-top: 200px;">
+              <button mat-raised-button color="primary" 
+              (click)="openDialog()"
+              matTooltip="Click To Add A New User"
+              >New User</button>
+            </div>
+            <div class="col-md-6">
                 <div class="example-header ">
                   <mat-form-field>
                     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
                   </mat-form-field>
                 </div>
               </div>
+
+              <div [style.display]="spinner? 'block':'none'" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+             
             <mat-table [dataSource]="dataSource" matSort >
             
                 <!-- ID Column -->
                 <ng-container matColumnDef="name">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
-                    <mat-cell *matCellDef="let row"> {{row.username}} </mat-cell>
+                    <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
                   </ng-container>
                 <ng-container matColumnDef="username">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Username</mat-header-cell>
@@ -37,9 +46,28 @@
             
                 <!-- Progress Column -->
                 <ng-container matColumnDef="password">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header style="max-width: 70px!important;"> Password </mat-header-cell>
-                  <mat-cell *matCellDef="let row" style="cursor: pointer;max-width: 70px!important;"> {{row.password}}  </mat-cell>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header > Password </mat-header-cell>
+                  <mat-cell *matCellDef="let row" > {{row.password}}  </mat-cell>
                 </ng-container>
+
+                  <!-- Progress Column -->
+                  <ng-container matColumnDef="email">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header > Email </mat-header-cell>
+                    <mat-cell *matCellDef="let row"  style="word-wrap: break-word"> {{row.email}}  </mat-cell>
+                  </ng-container>
+
+                    <!-- Progress Column -->
+                <ng-container matColumnDef="role">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header > Role </mat-header-cell>
+                  <mat-cell *matCellDef="let row" > {{row.role}}  </mat-cell>
+                </ng-container>
+
+
+                  <!-- Progress Column -->
+                  <ng-container matColumnDef="isactive">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header > Isactive </mat-header-cell>
+                    <mat-cell *matCellDef="let row" > {{row.isactive}}  </mat-cell>
+                  </ng-container>
             
               
           
@@ -50,7 +78,74 @@
             
               <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
           </div>
-         
+          <ng-template #dialog>
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+          
+            <ol>
+              <li>
+                <mat-form-field  [style.width.px]=327   >
+                  <input matInput formControlName="name" placeholder="Please Enter name?">
+                  
+                  <mat-error *ngIf="errors.name">{{errors.name}}</mat-error>
+                
+                </mat-form-field>
+              </li>
+              <li>
+                <mat-form-field [style.width.px]=327>
+                  <input matInput formControlName="username" placeholder="Select a User name?">
+                  <mat-error *ngIf="errors.username">{{errors.username}}</mat-error>
+                </mat-form-field>
+              </li>
+
+              <li>
+                <mat-form-field [style.width.px]=327>
+                  <input matInput formControlName="email" placeholder="Please Enter email?" >
+                  <mat-error *ngIf="errors.email">{{errors.email}}</mat-error>
+                 </mat-form-field>
+              </li>
+
+              <li>
+                <mat-form-field [style.width.px]=327>
+                
+                  <input matInput formControlName="password" placeholder="Please Enter password">
+                  <mat-error *ngIf="errors.password">{{errors.password}}</mat-error>
+                </mat-form-field>
+              </li>
+              <li>
+                <mat-form-field [style.width.px]=327>
+                  <mat-label>Select Role</mat-label>
+                  <mat-select formControlName="role">
+                    <mat-option  value="admin">
+                     Admin
+                    </mat-option>
+                    <mat-option  value="user">
+                      User
+                     </mat-option>
+                     <mat-option  value="distributor">
+                      Distributor
+                     </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </li>
+              <li>
+
+                <li>
+                  
+                </li>
+                <li>
+                
+                
+                  <button mat-raised-button color="primary"
+                  type="submit" 
+             
+              matTooltip="Click To Submit The Form"
+              >Submit</button>
+            
+              </li>
+            </ol>
+          </form>
+          </ng-template>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <app-footer></app-footer>

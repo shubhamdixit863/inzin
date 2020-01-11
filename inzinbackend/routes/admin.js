@@ -8,11 +8,15 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post("/user",adminMiddleware.registerUser,adminController.registerUser);
+
+
  /*
  Post Routes
  */
 
  router.post("/login",adminController.userLogin);
  router.post("/getUsers",adminController.getUsers);
+ router.post("/registeruser",adminMiddleware.registerUser,adminController.registerUser);
+ router.post("/checkEmail",adminMiddleware.registerUser,adminController.checkEmail);
+ router.post("/checkUsername",adminMiddleware.registerUser,adminController.checkUsername);
 module.exports = router;
