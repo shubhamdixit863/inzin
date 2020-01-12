@@ -17,6 +17,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ErrorvisualPipe } from './pipes/errorvisual.pipe';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [FooterComponent, NavbarComponent, SidebarComponent, SettingsComponent, ErrorvisualPipe],
@@ -35,12 +36,13 @@ import {MatRadioModule} from '@angular/material/radio';
     MatTooltipModule,
     MatDialogModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCheckboxModule
   
   
   ]
   // export is very important such that theese modules can be used in other components as well
-  ,exports:[MatRadioModule,MatSelectModule,FooterComponent,FormsModule, ReactiveFormsModule,ErrorvisualPipe, NavbarComponent,MatTooltipModule, SidebarComponent, SettingsComponent,MatDialogModule,MatButtonModule,MatTableModule,MatSnackBarModule, MatPaginatorModule,MatSortModule,MatFormFieldModule,MatSelectModule,MatInputModule,MatIconModule] // This export is necessary such that footer can be used in every componet under page
+  ,exports:[MatCheckboxModule,MatRadioModule,MatSelectModule,FooterComponent,FormsModule, ReactiveFormsModule,ErrorvisualPipe, NavbarComponent,MatTooltipModule, SidebarComponent, SettingsComponent,MatDialogModule,MatButtonModule,MatTableModule,MatSnackBarModule, MatPaginatorModule,MatSortModule,MatFormFieldModule,MatSelectModule,MatInputModule,MatIconModule] // This export is necessary such that footer can be used in every componet under page
   ,providers: [],
 })
 export class SharedModule { }

@@ -6,6 +6,7 @@
 
 const jwt = require("jsonwebtoken");
 const User=require('../models/users');
+const Category=require("../models/categories");
 
 const SimpleNodeLogger = require('simple-node-logger'),
     opts = {
@@ -108,6 +109,36 @@ adminService.checkExistingCredentials=async(credential,type)=>{
 
 
 }
+
+/**
+ * Categories Services
+ * 
+ */
+
+ adminService.getAllCategories=async()=>{
+
+  return await Category.find();
+
+
+ }
+
+ adminService.saveCategory=async()=>{
+  
+  let category=new Category({
+    photo:String,
+    parentcategory_name:String,
+    category_name:String,
+    title:String,
+    heading:String,
+    slug:String,
+    cat_desc:String,
+    content:String,
+    keywords:String,
+    subcartegories:[String]
+
+  })
+  
+ }
 
 
 module.exports=adminService;
