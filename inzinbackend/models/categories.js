@@ -6,24 +6,24 @@ const categoriesSchema= new Schema({
 
 
     photo_icon:String, // percategory one icon
-    frontend_url:String,
     category_name:String,
     seo_title:String, // to be inserted in meta_tag
     seo_heading:String,
     seo_slug:String,
-    seo_cat_desc:String,
-    page_content_category:String, // to be shown on particular page of category
+    seo_category_Description:String, // to be shown on particular page of category
     seo_keywords:String,
+    isParent:Boolean,
     subcategories:[
         {
-         category_name:String,
-         frontend_url:String,
-         seo_title:String, // to be inserted in meta_tag
-         seo_heading:String,
-         seo_slug:String,
-         seo_cat_desc:String,
-         page_content_category:String, // to be shown on particular page of category
-         seo_keywords:String,
+            photo_icon:String, // percategory one icon
+            category_name:String,
+            seo_title:String, // to be inserted in meta_tag
+            seo_heading:String,
+            seo_slug:String,
+            seo_category_Description:String, // to be shown on particular page of category
+            seo_keywords:String,
+            isParent:Boolean,
+            parentCategory:String
 
         }
   

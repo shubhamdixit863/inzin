@@ -1,4 +1,5 @@
 const adminService=require("../Services/adminService");
+
 const adminController={};
 adminController.registerUser=async(req,res)=>{
 
@@ -58,6 +59,68 @@ adminController.checkUsername=async(req,res)=>{
   }
 
   
+}
+/**
+ * Categories Controllers
+ * 
+ */
+
+// Uploading the catgories
+
+adminController.saveCategory=async(req,res)=>{
+  
+  req.body.photo_icon=req.files.image.path
+  let resw=await adminService.saveCategory(req.body);
+  console.log(resw);
+
+  if(resw)
+  {
+    res.json({status:true,"message":"Category Added"})
+  }
+
+  else{
+    res.json({status:false,"message":"Category Already exists"})
+  }
+
+  console.log(resw);
+  
+
+
+}
+
+adminController.getParentsCategory=async(req,res)=>{
+let parent_cate=await adminService.getParentCategories();
+let response=parent_cate.map(ele=>ele.category_name);
+  res.json({"categories":response});
+
+  
+}
+
+// getting all categories using aggreagtion pipe line in node js
+
+adminController.getAllCategories=async(req,res)=>{
+  let data_res=await adminService.getParentCategories();
+  let response=data_res.reduce((acc,{_id,parentCategory,isParent,category_name,seo_title,seo_heading,seo_slug,photo_icon,subcategories})=>{
+    let new_parent_obj=
+
+    {"_id":_id,
+      "category_name":category_name ,
+    "seo_title": seo_title,
+    "seo_heading": seo_heading,
+    "seo_slug": seo_slug,
+    "photo_icon": photo_icon,
+    "parentCategory":parentCategory,
+    "isParent":isParent
+  }
+    acc.push(...subcategories);
+    
+    acc.push(new_parent_obj);
+    return acc;
+
+  },[])
+
+  res.json(response);
+
 }
 
 

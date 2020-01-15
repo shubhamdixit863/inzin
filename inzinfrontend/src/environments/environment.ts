@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   url:"localhost",
-  port:3900
+  port:3900,
+  path:'../inzinbackend/'
 };
 
 /*

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from  "@angular/common/http";
 import { Observable } from 'rxjs';
 import { UserModel } from '../models/UserModel';
+import { CategoryModel } from '../models/CategoryModel';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,27 @@ export class AdminserviceService {
     return this.http.post<UserModel[]>(`http://${environment.url}:${environment.port}/admin/getUsers`,{});
   
   }
+
+  /*
+  Categories Service 
+  */
+ getParentCategory()
+ {
+  return this.http.post<string[]>(`http://${environment.url}:${environment.port}/admin/getParentsCategory`,{});
+
+ }
+
+ getAllCategory()
+ {
+  return this.http.post<CategoryModel[]>(`http://${environment.url}:${environment.port}/admin/getAllCategory`,{});
+
+ }
+
+ saveCategory(formdata)
+ {
+   console.log("fd",formdata);
+  return this.http.post(`http://${environment.url}:${environment.port}/admin/saveCategory`,formdata);
+
+ }
 
 }

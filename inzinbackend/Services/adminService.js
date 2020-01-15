@@ -115,30 +115,74 @@ adminService.checkExistingCredentials=async(credential,type)=>{
  * 
  */
 
- adminService.getAllCategories=async()=>{
+  // it returns the categories that are not embedded in the documents
+ adminService.getParentCategories=async()=>{
 
-  return await Category.find();
+  let category_array= await Category.find();
+  if(category_array)
+  {
+     return category_array;
+  }
 
+  else{
+    return [];
+  }
 
  }
 
- adminService.saveCategory=async()=>{
-  
-  let category=new Category({
-    photo:String,
-    parentcategory_name:String,
-    category_name:String,
-    title:String,
-    heading:String,
-    slug:String,
-    cat_desc:String,
-    content:String,
-    keywords:String,
-    subcartegories:[String]
+ // GET ALL CATEGORIES 
+/**
+ * adminService.getAllCategories=async()=>{
+   return await Category.aggregate([
+    {$unwind:"$subcategories"},
+    { $project: { "_id": 0 }}
 
-  })
+   ])
+
+
+
+ }
+ * 
+ */
+ 
+
+ /*
+ Categories
+ */
+
+ adminService.saveCategory=async(data)=>{
+  
+   if(data.isParent)
+   {
+     // this category is parent save it normally 
+     if(await Category.findOne({category_name:data.category_name}))
+     {
+      // category already exists in the database 
+      return false;
+     }
+
+     else{
+      let category=new Category(data);
+      category.subcategories=[]; // assigning empty array to subcategory
+       return await category.save();
+     }
+     
+   }
+   else{
+     // its not a parent category 
+     data.isParent=false;
+     // find the category with particular name,and update
+     return await Category.updateOne({category_name:data.parentCategory},{$addToSet:{subcategories:data}});
+
+     
+
+   }
+  
+  
   
  }
+
+
 
 
 module.exports=adminService;

@@ -7,6 +7,8 @@ import { AdminserviceService } from '../../shared/services/adminservice.service'
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators, FormControl,FormArray } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
+import { CategoryModel } from '../../shared/models/CategoryModel';
+import { environment } from '../../../../../environments/environment';
 @Component({
   selector: 'app-categories-page',
   templateUrl: './categories-page.component.html',
@@ -14,9 +16,9 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 })
 export class CategoriesPageComponent implements OnInit {
 
-  displayedColumns = ['name','username', 'password','email','role','isactive'];
+  displayedColumns = ['photo_icon','category_name', 'seo_title','seo_heading','seo_slug','seo_category_Description','seo_keywords','isParent'];
   //users:UserModel[]=[{username:"hello",password:"Hello",name:"Logan"}];
-  dataSource: MatTableDataSource<UserModel>;
+  dataSource: MatTableDataSource<CategoryModel>;
   categoryForm:FormGroup;
   public contactList: FormArray;
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -25,7 +27,10 @@ export class CategoriesPageComponent implements OnInit {
   name=new FormControl('', [Validators.required]);
   errors:any={};
   spinner:boolean=false;
- 
+  isParent:boolean=false;
+  parentCategories:string[]=["home","menu"];
+  selectedFile=null;
+  iconpath=environment.path;
  
   
 
@@ -67,47 +72,82 @@ openSnackBar(message:string) {
     this.dialog.closeAll();
   }
 
+  parentTrue(event)
+  {
+    if(event.checked)
+    {
+      this.isParent=true;
+    }
+    else{
+      this.isParent=false;
+    }
+  }
  
 
   // Submitting the form to register the users
 
   onSubmit()
   {
-     
-      this.adminservice.registerUser(this.f.username.value,this.f.password.value,this.f.role.value,this.f.isactive.value,this.f.name.value,this.f.email.value).subscribe(data=>{
-        if(data["status"])
-        {
-          this.openSnackBar(data["message"]);
-          this.closeDialog();
-          this.getUsers();
-        }
-        else{
-          this.openSnackBar("username or email already registered");
-        }
-        //console.log(data);
-      })  
+   
+ 
+
+  
+  
+     const fd=new FormData();
+     let file_ext=this.selectedFile.name.split(".");
+     fd.append('image',this.selectedFile,`categoryicon.${file_ext[1]}`);
+     fd.append('category_name',this.f.maincategory.value);
+     fd.append('seo_title',this.f.seo_title.value);
+     fd.append('seo_heading',this.f.seo_heading.value);
+     fd.append('seo_slug',this.f.seo_slug.value);
+     fd.append('seo_category_Description',this.f.seo_category_Description.value);
+     fd.append('seo_keywords',this.f. seo_keyword.value);
+     fd.append('isParent',this.f.isParent.value);
+     fd.append('parentCategory',this.f.parentCategory.value);
+
+    
+     this.adminservice.saveCategory(fd).subscribe(data=>{
+       this.openSnackBar(data["message"]);
+       this.closeDialog();
+       this.getAllCategories();
+       //console.log(data["message"]);
+     })
+        
         
   }
 
-  getUsers()
+  getParentCategories()
   {
-    this.spinner=true;
-    this.adminservice.getUsers().subscribe(data=>{
-
-      this.dataSource = new MatTableDataSource <UserModel>(data);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-      this.spinner=false;
-
-  // console.log(data);
+    this.adminservice.getParentCategory().subscribe(data=>{
+      //console.log("cate",data["categories"]);
+      this.parentCategories=data["categories"];
 
     })
   }
 
+  getAllCategories()
+  {
+
+    this.spinner=true;
+ 
+    this.adminservice.getAllCategory().subscribe(data=>{
+      this.dataSource = new MatTableDataSource <CategoryModel>(data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      this.spinner=false;
+    })
+  }
+  onFileSelected(event)
+  {
+    this.selectedFile=<File>event.target.files[0];
+  }
+
+  
 
 ngOnInit()
 {
-  this.getUsers();
+  this.getParentCategories();
+  this.getAllCategories();
   this.categoryForm = this.formBuilder.group({
    maincategory:["",Validators.required],
    seo_title:[""],

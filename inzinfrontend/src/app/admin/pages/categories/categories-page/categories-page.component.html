@@ -34,40 +34,52 @@
             <mat-table [dataSource]="dataSource" matSort >
             
                 <!-- ID Column -->
-                <ng-container matColumnDef="name">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
-                    <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+                <ng-container matColumnDef="photo_icon">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Icon</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> <img  height="42" width="42" src='assets/{{row.photo_icon}}' alt=""> </mat-cell>
                   </ng-container>
-                <ng-container matColumnDef="username">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Username</mat-header-cell>
-                  <mat-cell *matCellDef="let row"> {{row.username}} </mat-cell>
+                <ng-container matColumnDef="category_name">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Category Name</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.category_name}} </mat-cell>
                 </ng-container>
             
                 <!-- Progress Column -->
-                <ng-container matColumnDef="password">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header > Password </mat-header-cell>
-                  <mat-cell *matCellDef="let row" > {{row.password}}  </mat-cell>
+                <ng-container matColumnDef="seo_title">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header > Title </mat-header-cell>
+                  <mat-cell *matCellDef="let row" > {{row.seo_title}}  </mat-cell>
                 </ng-container>
 
                   <!-- Progress Column -->
-                  <ng-container matColumnDef="email">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header > Email </mat-header-cell>
-                    <mat-cell *matCellDef="let row"  style="word-wrap: break-word"> {{row.email}}  </mat-cell>
+                  <ng-container matColumnDef="seo_heading">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header > Heading </mat-header-cell>
+                    <mat-cell *matCellDef="let row"  style="word-wrap: break-word"> {{row.seo_heading}}  </mat-cell>
                   </ng-container>
 
                     <!-- Progress Column -->
-                <ng-container matColumnDef="role">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header > Role </mat-header-cell>
-                  <mat-cell *matCellDef="let row" > {{row.role}}  </mat-cell>
+                <ng-container matColumnDef="seo_slug">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header > Slug </mat-header-cell>
+                  <mat-cell *matCellDef="let row" > {{row.seo_slug}}  </mat-cell>
                 </ng-container>
 
 
                   <!-- Progress Column -->
-                  <ng-container matColumnDef="isactive">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header > Isactive </mat-header-cell>
-                    <mat-cell *matCellDef="let row" > {{row.isactive}}  </mat-cell>
+                  <ng-container matColumnDef="seo_category_Description">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header > Description </mat-header-cell>
+                    <mat-cell *matCellDef="let row" > {{row.seo_category_Description}}  </mat-cell>
                   </ng-container>
             
+                   <!-- Progress Column -->
+                   <ng-container matColumnDef="seo_keywords">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header > Keywords </mat-header-cell>
+                    <mat-cell *matCellDef="let row" > {{row.seo_keywords}}  </mat-cell>
+                  </ng-container>
+
+
+                   <!-- Progress Column -->
+                   <ng-container matColumnDef="isParent">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header > IsParent </mat-header-cell>
+                    <mat-cell *matCellDef="let row" > {{row.isParent}}  </mat-cell>
+                  </ng-container>
               
           
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -78,25 +90,35 @@
               <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
           </div>
           <ng-template #dialog>
+            <li>
+          
+              <input type="file"  style="display: none;" accept="image/*" (change)="onFileSelected($event)" #file>
+              <button mat-raised-button color="primary"
+              type="button" 
+              (click)="file.click()"
+         
+          matTooltip="Click To Select the file"
+          >Select Icon</button>
+          <span><mat-label>{{selectedFile?.name}}</mat-label></span>
+                
+                </li><br>
             <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
 
           
             <ol>
+              <li > 
+                <mat-label>IS Parent?</mat-label><br>
+                <mat-checkbox id="amateur" class="amateur" color="primary"
+                formControlName="isParent" (change)="parentTrue($event)" >Is Parent?</mat-checkbox>
+              </li>
 
-
-              <li>
+              <li [style.display]="isParent?'none':'block' ">
                 <mat-form-field>
                   <mat-label>Select Parent Category</mat-label>
                   <mat-select formControlName="parentCategory">
-                    <mat-option  value="admin">
-                     Admin
+                    <mat-option *ngFor="let category of parentCategories" [value]="category">
+                      {{category}}
                     </mat-option>
-                    <mat-option  value="user">
-                      User
-                     </mat-option>
-                     <mat-option  value="distributor">
-                      Distributor
-                     </mat-option>
                   </mat-select>
                 </mat-form-field>
               </li>
@@ -143,21 +165,7 @@
                  </mat-form-field>
               </li>
 
-              <li>
-                <mat-label>IS Parent?</mat-label>
-                <mat-checkbox id="amateur" class="amateur" color="primary"
-                formControlName="isParent">Amateur</mat-checkbox>
-              </li>
-
-
-
-              
-            
-            
-
-            
-            
-                <li>
+               <li>
                 
                 
                   <button mat-raised-button color="primary"
@@ -169,6 +177,7 @@
               </li>
             </ol>
           </form>
+          
           </ng-template>
          
           <!-- content-wrapper ends -->
