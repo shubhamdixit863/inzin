@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators, FormControl,FormArray } from '@angu
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 import { CategoryModel } from '../../shared/models/CategoryModel';
 import { environment } from '../../../../../environments/environment';
+import { IfStmt } from '@angular/compiler';
 @Component({
   selector: 'app-categories-page',
   templateUrl: './categories-page.component.html',
@@ -96,28 +97,35 @@ openSnackBar(message:string) {
   {
    
  
+      if(this.selectedFile)
+      {
+        const fd=new FormData();
+        let file_ext=this.selectedFile.name.split(".");
+        fd.append('image',this.selectedFile,`categoryicon.${file_ext[1]}`);
+        fd.append('category_name',this.f.maincategory.value);
+        fd.append('seo_title',this.f.seo_title.value);
+        fd.append('seo_heading',this.f.seo_heading.value);
+        fd.append('seo_slug',this.f.seo_slug.value);
+        fd.append('seo_category_Description',this.f.seo_category_Description.value);
+        fd.append('seo_keywords',this.f. seo_keyword.value);
+        fd.append('isParent',this.f.isParent.value);
+        fd.append('parentCategory',this.f.parentCategory.value);
+   
+       
+        this.adminservice.saveCategory(fd).subscribe(data=>{
+          this.openSnackBar(data["message"]);
+          this.closeDialog();
+          this.getAllCategories();
+          //console.log(data["message"]);
+        })
+      }
 
+      else{
+        this.openSnackBar("Please Select the icon!!");
+      }
   
   
-     const fd=new FormData();
-     let file_ext=this.selectedFile.name.split(".");
-     fd.append('image',this.selectedFile,`categoryicon.${file_ext[1]}`);
-     fd.append('category_name',this.f.maincategory.value);
-     fd.append('seo_title',this.f.seo_title.value);
-     fd.append('seo_heading',this.f.seo_heading.value);
-     fd.append('seo_slug',this.f.seo_slug.value);
-     fd.append('seo_category_Description',this.f.seo_category_Description.value);
-     fd.append('seo_keywords',this.f. seo_keyword.value);
-     fd.append('isParent',this.f.isParent.value);
-     fd.append('parentCategory',this.f.parentCategory.value);
-
-    
-     this.adminservice.saveCategory(fd).subscribe(data=>{
-       this.openSnackBar(data["message"]);
-       this.closeDialog();
-       this.getAllCategories();
-       //console.log(data["message"]);
-     })
+     
         
         
   }
