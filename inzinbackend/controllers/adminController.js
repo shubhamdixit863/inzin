@@ -68,6 +68,7 @@ adminController.checkUsername=async(req,res)=>{
 // Uploading the catgories
 
 adminController.saveCategory=async(req,res)=>{
+  console.log(req);
   
   req.body.photo_icon=req.files.image.path
   let resw=await adminService.saveCategory(req.body);

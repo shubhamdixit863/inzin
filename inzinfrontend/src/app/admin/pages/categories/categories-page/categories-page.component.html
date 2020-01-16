@@ -36,7 +36,7 @@
                 <!-- ID Column -->
                 <ng-container matColumnDef="photo_icon">
                     <mat-header-cell *matHeaderCellDef mat-sort-header>Icon</mat-header-cell>
-                    <mat-cell *matCellDef="let row"> <img  height="42" width="42" src='assets/{{row.photo_icon}}' alt=""> </mat-cell>
+                    <mat-cell *matCellDef="let row"> <img  height="42" width="42"  [src]="linkImg(row.photo_icon)" alt=""> </mat-cell>
                   </ng-container>
                 <ng-container matColumnDef="category_name">
                   <mat-header-cell *matHeaderCellDef mat-sort-header>Category Name</mat-header-cell>
