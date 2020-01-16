@@ -1,0 +1,203 @@
+<body>
+    <div class="container-scroller">
+      <!--PArtial navbar-->
+     <app-navbar></app-navbar>
+      
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <div class="row row-offcanvas row-offcanvas-right">
+          <!-- partial:partials/_settings-panel.html -->
+          <app-settings></app-settings>
+        
+          <!-- partial -->
+          <!-- partial:partials/_sidebar.html -->
+          <app-sidebar></app-sidebar>
+        
+          <!-- partial -->
+          <div class="content-wrapper">
+            <div class="col-md-2" style="margin-top: 200px;">
+              <button mat-raised-button color="primary" 
+              (click)="openDialog()"
+              matTooltip="Click To Add A New User"
+              >New Brand</button>
+            </div>
+            <div class="col-md-6">
+                <div class="example-header ">
+                  <mat-form-field>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div [style.display]="spinner? 'block':'none'" class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+             
+            <mat-table [dataSource]="dataSource" matSort >
+            
+                <!-- ID Column -->
+                <ng-container matColumnDef="photo_icon">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Icon</mat-header-cell>
+                    <mat-cell *matCellDef="let row"> <img  height="42" width="42"  [src]="linkImg(row.photo_icon)" alt=""> </mat-cell>
+                  </ng-container>
+                <ng-container matColumnDef="category_name">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Category Name</mat-header-cell>
+                  <mat-cell *matCellDef="let row"> {{row.category_name}} </mat-cell>
+                </ng-container>
+            
+                <!-- Progress Column -->
+                <ng-container matColumnDef="seo_title">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header > Title </mat-header-cell>
+                  <mat-cell *matCellDef="let row" > {{row.seo_title}}  </mat-cell>
+                </ng-container>
+
+                  <!-- Progress Column -->
+                  <ng-container matColumnDef="seo_heading">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header > Heading </mat-header-cell>
+                    <mat-cell *matCellDef="let row"  style="word-wrap: break-word"> {{row.seo_heading}}  </mat-cell>
+                  </ng-container>
+
+                    <!-- Progress Column -->
+                <ng-container matColumnDef="seo_slug">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header > Slug </mat-header-cell>
+                  <mat-cell *matCellDef="let row" > {{row.seo_slug}}  </mat-cell>
+                </ng-container>
+
+
+                  <!-- Progress Column -->
+                  <ng-container matColumnDef="seo_category_Description">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header > Description </mat-header-cell>
+                    <mat-cell *matCellDef="let row" > {{row.seo_category_Description}}  </mat-cell>
+                  </ng-container>
+            
+                   <!-- Progress Column -->
+                   <ng-container matColumnDef="seo_keywords">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header > Keywords </mat-header-cell>
+                    <mat-cell *matCellDef="let row" > {{row.seo_keywords}}  </mat-cell>
+                  </ng-container>
+
+
+                   <!-- Progress Column -->
+                   <ng-container matColumnDef="isParent">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header > IsParent </mat-header-cell>
+                    <mat-cell *matCellDef="let row" > {{row.isParent}}  </mat-cell>
+                  </ng-container>
+              
+          
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;">
+                </mat-row>
+              </mat-table>
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+          </div>
+          <ng-template #dialog>
+            <li>
+          
+              <input type="file"  style="display: none;" accept="image/*" (change)="onFileSelected($event)" #file>
+              <button mat-raised-button color="primary"
+              type="button" 
+              (click)="file.click()"
+         
+          matTooltip="Click To Select the file"
+          >Select Icon</button>
+          <span><mat-label>{{selectedFile?.name}}</mat-label></span>
+                
+                </li><br>
+            <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+
+          
+            <ol>
+              <li > 
+                <mat-label>IS Parent?</mat-label><br>
+                <mat-checkbox id="amateur" class="amateur" color="primary"
+                formControlName="isParent" (change)="parentTrue($event)" >Is Parent?</mat-checkbox>
+              </li>
+
+              <li [style.display]="isParent?'none':'block' ">
+                <mat-form-field>
+                  <mat-label>Select Parent Category</mat-label>
+                  <mat-select formControlName="parentCategory">
+                    <mat-option *ngFor="let category of parentCategories" [value]="category">
+                      {{category}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </li>
+              <li>
+                <mat-form-field  [style.width.px]=327 >
+                  <input matInput formControlName="maincategory" placeholder="Category Name">
+                  </mat-form-field>
+              </li>
+
+              <li>
+                <mat-form-field  [style.width.px]=327 >
+                  <input matInput formControlName="seo_title" placeholder="SEO TITLE">
+                   </mat-form-field>
+              </li>
+
+              <li>
+                <mat-form-field  [style.width.px]=327 >
+                  <input matInput formControlName="seo_heading" placeholder="SEO HEADING">
+                 </mat-form-field>
+              </li>
+
+
+              <li>
+                <mat-form-field  [style.width.px]=327 >
+                  <input matInput formControlName="seo_slug" placeholder="SEO SLUG">
+                   </mat-form-field>
+              </li>
+
+              <li>
+                <mat-form-field  [style.width.px]=327 >
+                  <textarea matInput formControlName="seo_category_Description"  placeholder="SEO CATEGORY DESCRIPTION"></textarea>
+                  </mat-form-field>
+              </li>
+
+              <li>
+                <mat-form-field  [style.width.px]=327 >
+                  <textarea matInput formControlName="page_content"  placeholder="PAGE CONTENT"></textarea>
+              </mat-form-field>
+              </li>
+
+              <li>
+                <mat-form-field  [style.width.px]=327 >
+                  <textarea matInput formControlName="seo_keyword"  placeholder="SEO KEYWORDS"></textarea>
+                 </mat-form-field>
+              </li>
+
+               <li>
+                
+                
+                  <button mat-raised-button color="primary"
+                  type="submit" 
+             
+              matTooltip="Click To Submit The Form"
+              >Submit</button>
+            
+              </li>
+            </ol>
+          </form>
+          
+          </ng-template>
+         
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <app-footer></app-footer>
+          <footer class="footer">
+            <div class="container-fluid clearfix">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2017 <a href="#">UrbanUI</a>. All rights reserved.</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- row-offcanvas ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+  
+    
+  </body>
+  
+  

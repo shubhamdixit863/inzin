@@ -29,7 +29,13 @@ const routes: Routes = [
   {
     path: 'categories',
     loadChildren: './pages/categories/categories.module#CategoriesModule',
-    canActivate:[],
+    canActivate:[AuthGuard],
+  },
+
+  {
+    path: 'brands',
+    loadChildren: './pages/brands/brands.module#BrandsModule',
+    canActivate:[AuthGuard],
   },
 
 ];

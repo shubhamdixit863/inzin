@@ -1,9 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-@import "assets/home/common/bootstrap/css/bootstrap.min.css";
-@import "assets/home/common/owl-carousel/css/owl.carousel.min.css";
-@import "assets/home/common/fancybox/jquery.fancybox.min.css";
+
 @import "assets/admin/css/style.css";
 @import "assets/home/css/style.css";
+@import "assets/home/css/responsive.css";
+@import "assets/home/css/animate.css";
+@import "assets/home/css/header.css";
+@import "assets/home/css/bootstrap.min.css";
+@import "assets/home/css/plugins.css";
+@import "assets/home/css/owl.carousel.min.css";
+@import "assets/home/css/slick.css";
+@import "assets/home/css/slick-theme.css";
+@import "assets/home/css/owl.carousel.min.css";
+@import "assets/home/css/owl.theme.default.min.css";
+@import "assets/home/css/flaticon.css";
+@import "assets/home/css/fontawesome.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 html, body { height: 100%; }

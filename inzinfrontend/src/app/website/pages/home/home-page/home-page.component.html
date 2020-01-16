@@ -1,538 +1,872 @@
-<app-navbarhome></app-navbarhome>
-<body>
-<!-- Register/sign-up Form Start here  -->	
-<div class="login-sign-up-popup" id="sign-up">
-    <div class="sign-up-form">
-        <div class="top-sec">
-            <a href="index.html" class="logo"><img src="/assets/home/images/modal-logo.png" alt="logo"></a>
-            <h3>REGISTER</h3>
-            <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            <div class="form-section">	
-                <form action="#" method="get">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="First name*" required>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="last name*" required>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="phone*" required>
-                  </div>						  
-                  <div class="form-group">
-                    <input type="email" class="form-control" placeholder="email*" required>
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required>
-                  </div>
-                  <button type="submit" class="btn book-ride submit">REGISTER</button>
-                </form>							
-            </div> 
-        </div>
-        <div class="bottom-sec">
-            <p>Already have an account?<a data-fancybox="" href="#login-form"> Login</a></p>  
+ 
+ <app-navbarhome></app-navbarhome>
+ <!-- Search Form -->
+ <div id="search" class="top-search d-flex">
+    <span class="close">
+        <i class="fa fa-times"></i>
+    </span>
+    <div class="w-100 text-center mt-4">
+        <h3 class="c-white fw-5">search here</h3>
+        <form role="search" id="searchform" action="#" method="get" class="search-bar">
+            <input value="" name="q" type="search" placeholder="type to search..." class="form-control">
+            <button type="submit" class="submit-btn">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- banner start -->
+<div class="main-banner">
+    <div class="banner-image" data-jarallax='{"videoStartTime": 4300}' data-jarallax-video="https://youtu.be/y1Alop4LhYI">
+        <div class="container">
+            <div class="banner-content">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Find The Best Place In Your City</h2>
+                        <p class="mt-4">Lorem ipsum dolor sit amet, consecws eftetuer adscnki iscedring elit aendea cdefom ameodo lorem
+                            ipsf dolor sit amet conscsec tsetuer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="list-category mb-4">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-3">
+                        <div class="list-items mb-30 btn-anim">
+                            <div class="icon-box">
+                                <i class="flaticon-find"></i>
+                            </div>
+                            <h5 class="mb-0">
+                                <a href="#">Distributor</a>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-3">
+                        <div class="list-items mb-30 btn-anim">
+                            <div class="icon-box">
+                                <i class="flaticon-spa"></i>
+                            </div>
+                            <h5 class="mb-0">
+                                <a href="#">CNF</a>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-3">
+                        <div class="list-items mb-30 btn-anim">
+                            <div class="icon-box">
+                                <i class="flaticon-cheers"></i>
+                            </div>
+                            <h5 class="mb-0">
+                                <a href="#">Dealer</a>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-3">
+                        <div class="list-items mb-30 btn-anim">
+                            <div class="icon-box">
+                                <i class="flaticon-cheers"></i>
+                            </div>
+                            <h5 class="mb-0">
+                                <a href="#">Workshop</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form action="#" class="banner-form mt-5 mb-5">
+                <div class="row justify-content-md-center">
+                    <div class="col-lg-4 col-md-6">
+                        <input type="text" class="form-control mb-lg-0" placeholder="Which location you looking for?">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <select class="form-control mb-lg-0 custom-select" id="service2">
+                            <option>all brands</option>
+                            <option>hotel</option>
+                            <option>tour</option>
+                            <option>pharmacy</option>
+                            <option>shops</option>
+                        </select>
+
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <button type="submit" class="btn btn-one btn-anim w-100">
+                            <i class="fa fa-search"></i> search</button>
+                    </div>
+                </div>
+            </form><br>
         </div>
     </div>
 </div>
-<!-- Register/sign-up Form End here  -->	
-<!-- Login Start here -->
-<div class="login-sign-up-popup" id="login-form">
-    <div class="login-form">		
-        <div class="top-sec">
-            <a href="index.html" class="logo"><img src="/assets/home/images/modal-logo.png" alt="logo"></a>
-            <h3>LOGIN</h3>
-            <p>Lorem ipsum dolor sit amet consectetur elit.</p>
-            <div class="form-section">	
-                <form action="#" method="get">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Email/Phone" required>
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required>
-                  </div>
-                  <p class="frgot-pwd"><a href="#">Forgot password?</a></p>
-                  <button type="submit" class="btn book-ride submit">LOGIN</button>
-                </form>							
-            </div> 
-        </div>
-        <div class="bottom-sec">
-            <p>Don't have an account?<a data-fancybox="" href="#sign-up"> Register Now</a></p>
-            <p class="log-with"><span>or login with</span></p>
-            <ul class="login-socio">
-                <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i>Facebook</a></li>
-                <li><a class="twitter" href="#" target="_blank"><i class="fab fa-twitter"></i>Twitter</a></li>
-            </ul>
-        </div>
-    </div>
-</div>	
-<!-- Login Form End here -->			
-<!-- Pagewrap Start Here -->
-<div class="content">
-    <!--  Banner Start here -->
-    <section class="banner-home">
-        <div class="banner-box">
-            <!-- <h1><span>Amsterdam</span>Taxi Service Online</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut arcu id risus viverra ultricies non et sem. Sed pharetra porta turpis mollis commodo.</p> -->
-        </div>
-    </section>
-    <!--  Banner End here -->
-    <!-- Search Section Start here -->
-    <section class="search-section">
-        <div class="container">
-            <div class="tab-sec">
-                <div class="tab-content px-sm-0" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-stander" role="tabpanel" aria-labelledby="nav-stander-tab">
-                        <div class="tab-details">
-                            <figure>
-                                <img src="/assets/home/images/distributor.png" alt="Car Image">
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-suv" role="tabpanel" aria-labelledby="nav-suv-tab">
-                        <div class="tab-details">
-                            <figure>
-                                <img src="/assets/home/images/CnF.png" alt="Car Image">
-                            </figure>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-mini" role="tabpanel" aria-labelledby="nav-mini-tab">
-                        <div class="tab-details">
-                            <figure>
-                                <img src="/assets/home/images/Dealer.png" alt="Car Image">
-                            </figure>
-                        </div>								
-                    </div>
-                    <div class="tab-pane fade" id="nav-vip" role="tabpanel" aria-labelledby="nav-vip-tab">
-                        <div class="tab-details">
-                            <figure>
-                                <img src="/assets/home/images/workshop.png" alt="Car Image">
-                            </figure>
-                        </div>
-                    </div>						
-                </div>
-                <nav><br>
-                <div class="col-md-12">
-                  <div class="btn-group" id="status" data-toggle="buttons">
-                    <label class="btn btn-default btn-on-2 btn-sm active">
-                    <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Categories</label>
-                    <label class="btn btn-default btn-off-2 btn-sm ">
-                    <input type="radio" value="0" name="multifeatured_module[module_id][status]">Brands</label>
-                  </div>
-                </div>  
+<!-- banner end -->
 
-                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-stander-tab" data-toggle="tab" href="#nav-stander" role="tab" aria-controls="nav-stander" aria-selected="true">
-                            <img src="/assets/home/images/Distributor.svg" alt="Car Image">
-                            <p>distributor</p>
-                        </a>								
-                        <a class="nav-item nav-link" id="nav-suv-tab" data-toggle="tab" href="#nav-suv" role="tab" aria-controls="nav-suv" aria-selected="false">
-                            <img src="/assets/home/images/CNF.svg" alt="Car Image">								
-                            <p>cnf</p>
-                        </a>								
-                        <a class="nav-item nav-link" id="nav-mini-tab" data-toggle="tab" href="#nav-mini" role="tab" aria-controls="nav-mini" aria-selected="false">
-                            <img src="/assets/home/images/Dealer.svg" alt="Car Image">								
-                            <p>dealer</p>
-                        </a>								
-                        <a class="nav-item nav-link" id="nav-vip-tab" data-toggle="tab" href="#nav-vip" role="tab" aria-controls="nav-vip" aria-selected="false">
-                            <img src="/assets/home/images/Workshop.svg" alt="Car Image">								
-                            <p>workshop</p>
-                        </a>
-                    </div>
-                </nav>
-                <form class="form-inline">	
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Choose Category">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Choose Brand">
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Phone Number">
-                        </div>
-                        <div class="form-group">
-                            <a href="book-a-ride.html" class="btn book-ride">Book a ride</a>
-                        </div>
-                </form>
-            </div>
-        </div>
-    </section>			
-    <!-- Search Section End here -->
-    <!-- What We Offer Section Start here -->	
-    <section class="we-offer sec-pd">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h3>WHAT WE OFFER</h3>
-                        <h2>HOW INZIN WORKS?</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel dolor nec metus porta feugiat sit amet vitae neque. Ut egestas venenatis massa, quis facilisis massa blandit vel.</p>
-                    </div>
-                </div>
-            </div>	
-            <ul>
-                <li>
-                    <div class="offer-colm">
-                        <img src="/assets/home/images/adress-pickup.png" alt="Address Pickup">	
-                        <h3>Address Pickup</h3>	
-                        <p>We always pick up our clients on time, 24/7 availability.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="offer-colm">
-                        <img src="/assets/home/images/airport-ransfer.png" alt="Airport Transfer">	
-                        <h3>Airport Transfer</h3>	
-                        <p>GetCab specialized in 24 hours airport transfer service.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="offer-colm">
-                        <img src="/assets/home/images/long-distance.png" alt="Long Distance">	
-                        <h3>Long Distance</h3>	
-                        <p>We offer you a long distance taxi service to anywhere.</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="offer-colm no-bd">
-                        <img src="/assets/home/images/taxi-tours.png" alt="Taxi Tours">	
-                        <h3>Taxi Tours</h3>	
-                        <p>We offer taxi tours of various durations and complexity.</p>
-                    </div>
-                </li>
-            </ul>			
-        </div>
-    </section>			
-    <!-- What We Offer Section End here -->			
-    <!-- Download App Section Start here -->	
-    <section class="download-app parallax">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-lg-6">
-                    <div class="section-title">
-                        <h3>DOWNLOAD FOR FREE</h3>
-                        <h2>Download the App</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet velit massa. Etiam consequat sit amet felis et efficitur.</p>
-                        <ul>
-                            <li><a href="#" target="_blank"><img src="/assets/home/images/app-store.png" alt="App Store"></a></li>
-                            <li><a href="#" target="_blank"><img src="/assets/home/images/google-app.png" alt="Google App"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="download-app-right">
-                        <img src="/assets/home/images/download-app-right-image.png" alt="Mobile App">	
-                    </div>
-                </div>
-            </div>			
-        </div>
-    </section>			
-    <!-- Download App Section End here -->						
-    <!-- Latest News Section Start here -->	
-    <section class="latest-news sec-pd">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h3>STAY IN TOUCH</h3>
-                        <h2>Choose Your Brand</h2>
-                    </div>
-                </div>
-            </div>	
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="news-blk">
-                        <div class="img-ar">
-                            <img src="/assets/home/images/latest-news1.jpg" alt="Latest New">
-                        </div>
-                        <div class="txt-ar">
-                            <h3>Fasten Velocity</h3>
-                            <h5><i class="far fa-clock"></i>Oct 19, 2019</h5>
-                            <p>Pellentesque vitae dui sit amet enim consequat bibendum Donec feugiat ex arcu.</p>
-                            <a href="news-details.html">Read More<span><i class="fas fa-arrow-right"></i></span></a>
-                            <a href="news.html" class="btn book-ride">Book Now</a>
-                        </div>					
-                    </div>
-                </div>					
-                <div class="col-md-6">
-                    <div class="news-blk">
-                        <div class="img-ar">
-                            <img src="/assets/home/images/latest-news2.jpg" alt="Latest New">
-                        </div>
-                        <div class="txt-ar">
-                            <h3>D4 Lubricants</h3>
-                            <h5><i class="far fa-clock"></i>Oct 19, 2019</h5>
-                            <p>Pellentesque vitae dui sit amet enim consequat bibendum Donec feugiat ex arcu.</p>
-                            <a href="news-details.html">Read More<span><i class="fas fa-arrow-right"></i></span></a>
-                            <a href="news.html" class="btn book-ride">Book Now</a>
-                        </div>						
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="news-blk">
-                        <div class="img-ar">
-                            <img src="/assets/home/images/latest-news2.jpg" alt="Latest New">
-                        </div>
-                        <div class="txt-ar">
-                            <h3>D4 Lubricants</h3>
-                            <h5><i class="far fa-clock"></i>Oct 19, 2019</h5>
-                            <p>Pellentesque vitae dui sit amet enim consequat bibendum Donec feugiat ex arcu.</p>
-                            <a href="news-details.html">Read More<span><i class="fas fa-arrow-right"></i></span></a>
-                            <a href="news.html" class="btn book-ride">Book Now</a>
-                        </div>						
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="news-blk">
-                        <div class="img-ar">
-                            <img src="/assets/home/images/latest-news2.jpg" alt="Latest New">
-                        </div>
-                        <div class="txt-ar">
-                            <h3>D4 Lubricants</h3>
-                            <h5><i class="far fa-clock"></i>Oct 19, 2019</h5>
-                            <p>Pellentesque vitae dui sit amet enim consequat bibendum Donec feugiat ex arcu.</p>
-                            <a href="news-details.html">Read More<span><i class="fas fa-arrow-right"></i></span></a>
-                            <a href="news.html" class="btn book-ride">Book Now</a>
-                        </div>						
-                    </div>
-                </div>
-            </div>	
-            <div class="row">	
-                <div class="veiw-all-news col-12">
-                    <a href="news.html" class="btn book-ride">VIEW ALL NEWS</a>
-                </div>
-            </div>
-        </div>
-    </section>			
-    <!-- Latest News Section End here -->	
-
-        <!-- Car Classes & Rates Section Start here -->	
-        <section class="car-category sec-pd">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="section-title">
-                            <h3>CAR CLASSES AND RATES</h3>
-                            <h2>LATEST OFFERS</h2>
-                        </div>
-                    </div>
-                </div>	
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="category-colm">
-                            <img src="/assets/home/images/economy-car.png" alt="Economy Class">	
-                            <h3>Economy Class</h3>	
-                            <p>Our taxi service offers a big car selection from luxury vehicles to budget cars</p>
-                            <h4>$2,5/mi</h4>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="category-colm">
-                            <img src="/assets/home/images/stander-car.png" alt="Standard Class">	
-                            <h3>Standard Class</h3>	
-                            <p>Our taxi service offers a big car selection from luxury vehicles to budget cars</p>
-                            <h4>$3,5/mi</h4>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="category-colm">
-                            <img src="/assets/home/images/bussines-car.png" alt="Business Class">	
-                            <h3>Business Class</h3>	
-                            <p>Our taxi service offers a big car selection from luxury vehicles to budget cars</p>
-                            <h4>$4,5/mi</h4>
-                        </div>
-                    </div>
-                </div>			
-            </div>
-        </section>			
-        <!-- Car Classes & Rates Section End here -->	
-
-    <!-- Our Benefits Section Start here -->	
-    <section class="our-benefits sec-pd">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h3>MAIN FEATURES</h3>
-                        <h2>Our Services</h2>
-                    </div>
-                </div>
-            </div>	
-            <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="benefits-colm">
-                        <img src="/assets/home/images/fixed-price.png" alt="Fixed Price">	
-                        <h3>Fixed Price</h3>	
-                        <p>The fixed fare is set in every taximeter as the main tariff.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="benefits-colm">
-                        <img src="/assets/home/images/no-fee.png" alt="No Fee">	
-                        <h3>No Fee</h3>	
-                        <p>We guarantee fixed price and you should not pay tips.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="benefits-colm">
-                        <img src="/assets/home/images/pleasure.png" alt="100% Pleasure">	
-                        <h3>100% Pleasure</h3>	
-                        <p>We have a lot of standing customer and high ratings.</p>
-                    </div>
-                </div>
-            
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="benefits-colm">
-                        <img src="/assets/home/images/nationwide.png" alt="Nationwide">	
-                        <h3>Nationwide</h3>	
-                        <p>Our application is the easiest way to book a taxi.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="benefits-colm">
-                        <img src="/assets/home/images/easy-to-use.png" alt="Easy to use">	
-                        <h3>Easy to use</h3>	
-                        <p>Orci varius natoque penatibus et magnis dis parturient montes,mus.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="benefits-colm">
-                        <img src="/assets/home/images/bonuse--for-ride.png" alt="100% Pleasure">	
-                        <h3>Bonuses for Ride</h3>	
-                        <p>Phasellus l et porta tortor dignissim at. Pellentesque gravida tortormollis.</p>
-                    </div>
-                </div>
-            
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="benefits-colm">
-                        <img src="/assets/home/images/nationwide.png" alt="Nationwide">	
-                        <h3>Nationwide</h3>	
-                        <p>Our application is the easiest way to book a taxi.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="benefits-colm">
-                        <img src="/assets/home/images/easy-to-use.png" alt="Easy to use">	
-                        <h3>Easy to use</h3>	
-                        <p>Orci varius natoque penatibus et magnis dis parturient montes,mus.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-6">
-                    <div class="benefits-colm">
-                        <img src="/assets/home/images/bonuse--for-ride.png" alt="100% Pleasure">	
-                        <h3>Bonuses for Ride</h3>	
-                        <p>Phasellus l et porta tortor dignissim at. Pellentesque gravida tortormollis.</p>
-                    </div>
-                </div>
-            </div>	
-        </div>
-    </section>			
-    <!-- Our Benefits Section End here -->	
-    <!-- Earn with us Section Start here -->	
-    <section class="earn-with-us sec-pd">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="section-title">
-                        <h3>HI! SELLERS</h3>
-                        <h2>DO YOU WANT TO SELL WITH US?</h2>
-                        <p>Quisque eleifend enim eu dui gravida scelerisque ac sed erat. Morbi sed ultrices lacus. Vestibulum lacinia ipsum non placerat viverra. Vivamus accumsan, lacus nec finibus sagittis, augue nibh sollicitudin lorem, non luctus sapien nunc ac dolor. Sed mollis ex dolor, vel molestie dolor feugiat vel. Nulla facilisi. In viverra sapien vitae lectus consectetur nec vestibulum enim semper. Nulla auctor neque augue, sit amet euismod mi interdum id. Nam v</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i>Luxury cars</li>
-                            <li><i class="fas fa-check"></i>No fee</li>
-                            <li><i class="fas fa-check"></i>Weekly payment</li>
-                        </ul>
-                        <ul>
-                            <li><i class="fas fa-check"></i>Weekly payment</li>
-                            <li><i class="fas fa-check"></i>Good application</li>
-                            <li><i class="fas fa-check"></i>Stable orders</li>									
-                        </ul>								
-                        <a href="drive-with-us.html" class="btn book-ride">Become Driver</a>
-                    </div>
-                </div>	
-                <div class="col-md-6">
-                    <div class="right-colm">
-                        <img src="/assets/home/images/sell-with-us.png" alt="Car Driver">	
-                    </div>	
-                </div>					
-            </div>			
-        </div>
-    </section>			
-    <!-- Earn with us Section End here -->
-    <!-- Testimonials Section Start Here -->
-    <section class="testimonials-sec sec-pd">
-        <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="section-title">
-                    <h3>Our Client Loves Us</h3>
-                    <h2>testimonials</h2>
-                </div>
-            </div>				
-        </div>	
+<!-- steps-section start-->
+<section class="steps-section sp-100-70 bg-dull tri-bg">
+    <div class="container">
         <div class="row">
             <div class="col-12">
-                <div id="testimonial-slider" class="owl-carousel owl-theme">
-                    <div class="item">
-                        <div class="testimonial">
-                            <div class="pic">
-                                <img src="/assets/home/images/img-1.png" alt="">
-                            </div>
-                            <div class="review">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris tellus, congue sit amet elementum sit amet, imperdiet non erat. Pellentesque finibus nisi rhoncus turpis pellentesque venenatis. Ut nec scelerisque urna, non luctus leo. Aliquam aliquam tempus lectus eu rutrum. Nam vitae nisi dapibus, bibendum metus rutrum eleifend lacus. Suspendisse potenti. Maecenas dolor nunc, interdum id metus sed, euismod tempor mi. Cras orci ex, faucibus in quam</p>
+                <div class="all-title">
+                    <h3 class="sec-title">
+                        How Inzin Works?
+                    </h3>
+                    <svg class="title-sep">
+                        <path fill-rule="evenodd" d="M32.000,13.000 L32.000,7.000 L35.000,7.000 L35.000,13.000 L32.000,13.000 ZM24.000,4.000 L27.000,4.000 L27.000,16.000 L24.000,16.000 L24.000,4.000 ZM16.000,-0.000 L19.000,-0.000 L19.000,20.000 L16.000,20.000 L16.000,-0.000 ZM8.000,4.000 L11.000,4.000 L11.000,16.000 L8.000,16.000 L8.000,4.000 ZM-0.000,7.000 L3.000,7.000 L3.000,13.000 L-0.000,13.000 L-0.000,7.000 Z"
+                        />
+                    </svg>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor penatibus
+                        ean massa. Cum sociis natoqu penatibus et magnis dis parturient montes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row steps-wrap justify-content-center">
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="steps">
+                    <div class="icon-box mb-3">
+                        <i class="flaticon-layers"></i>
+                    </div>
+                    <h5>
+                        <span class="c-theme">1. </span> Choose a Category</h5>
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consec rcqui adipiscing elit socada como ligaui.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="steps">
+                    <div class="icon-box mb-3">
+                        <i class="flaticon-map"></i>
+                    </div>
+                    <h5>
+                        <span class="c-theme">2. </span> Find What You Want</h5>
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consec rcqui adipiscing elit socada como ligaui.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="steps">
+                    <div class="icon-box mb-3">
+                        <i class="flaticon-shop"></i>
+                    </div>
+                    <h5>
+                        <span class="c-theme">3. </span> go Out & Explore</h5>
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consec rcqui adipiscing elit socada como ligaui.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- steps-section end -->
+
+
+<!-- popular list start-->
+<section class="popular-list sp-100 bg-w">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="all-title">
+                    <h3 class="sec-title">
+                        premium brands
+                    </h3>
+                    <svg class="title-sep">
+                        <path fill-rule="evenodd" d="M32.000,13.000 L32.000,7.000 L35.000,7.000 L35.000,13.000 L32.000,13.000 ZM24.000,4.000 L27.000,4.000 L27.000,16.000 L24.000,16.000 L24.000,4.000 ZM16.000,-0.000 L19.000,-0.000 L19.000,20.000 L16.000,20.000 L16.000,-0.000 ZM8.000,4.000 L11.000,4.000 L11.000,16.000 L8.000,16.000 L8.000,4.000 ZM-0.000,7.000 L3.000,7.000 L3.000,13.000 L-0.000,13.000 L-0.000,7.000 Z"
+                        />
+                    </svg>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor penatibus
+                        ean massa. Cum sociis natoqu penatibus et magnis dis parturient montes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="popular-list-slider mb-0">
+                    <div class="listing-item p-2">
+                        <div class="img-holder">
+                            <span class="offer">save 49%
+                            </span>
+                            <img src="assets/home/img/home/pl-slide1.jpg" alt="list">
+                            <div class="rate-like centering justify-content-between">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <a class="likes" href="#">
+                                    <i class="far fa-heart"></i> 4
+                                </a>
                             </div>
                         </div>
-                        <div class="author">	
-                            <h3>John Deo</h3>
-                            <p>Mauris venenatis pulvinar</p>
+                        <div class="list-content p-2">
+                            <ul class="ctg-info py-2 mb-3">
+                                <li>
+                                    <a href="#">
+                                        <i class="flaticon-cutlery mr-2"></i> restaurants</a>
+                                </li>
+                                <li>
+                                    <span class="c-theme"> open now</span>
+                                </li>
+                            </ul>
+                            <h5 class="mb-2">
+                                <a href="listing-detail.html">the lounge & bar</a>
+                            </h5>
+                            <p>Donec pede justo, fringilla vel, aliquet nectior</p>
+                            <ul class="ctg-info2 pt-2 mt-3 centering justify-content-between">
+                                <li class="mt-1">
+                                    <a href="#">
+                                        <i class="fa fa-map-marker-alt mr-2"></i>San Francisco, USA</a>
+                                </li>
+                                <li class="mt-1">
+                                    <a href="#">
+                                        <i class="fa fa-phone mr-2"></i>0123-456-789</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testimonial">
-                            <div class="pic">
-                                <img src="/assets/home/images/img-1.png" alt="">
-                            </div>
-                            <div class="review">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris tellus, congue sit amet elementum sit amet, imperdiet non erat. Pellentesque finibus nisi rhoncus turpis pellentesque venenatis. Ut nec scelerisque urna, non luctus leo. Aliquam aliquam tempus lectus eu rutrum. Nam vitae nisi dapibus, bibendum metus rutrum eleifend lacus. Suspendisse potenti. Maecenas dolor nunc, interdum id metus sed, euismod tempor mi. Cras orci ex, faucibus in quam</p>
+                    <div class="listing-item p-2">
+                        <div class="img-holder">
+                            <span class="offer">save 30%
+                            </span>
+                            <img src="assets/home/img/home/pl-slide2.jpg" alt="list">
+                            <div class="rate-like centering justify-content-between">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+
+                                <a class="likes" href="#">
+                                    <i class="far fa-heart"></i>3
+                                </a>
                             </div>
                         </div>
-                        <div class="author">	
-                            <h3>John Deo</h3>
-                            <p>Mauris venenatis pulvinar</p>
+                        <div class="list-content p-2">
+                            <ul class="ctg-info py-2 mb-3">
+                                <li>
+                                    <a href="#">
+                                        <i class="flaticon-shop mr-2"></i>shopping</a>
+                                </li>
+                                <li>
+                                    <span class="c-theme"> open now</span>
+                                </li>
+                            </ul>
+                            <h5 class="mb-2">
+                                <a href="listing-detail.html">the best shop in city</a>
+                            </h5>
+                            <p>Donec pede justo, fringilla vel, aliquet nectior</p>
+                            <ul class="ctg-info2 pt-2 mt-3 centering justify-content-between">
+                                <li class="mt-1">
+                                    <a href="#">
+                                        <i class="fa fa-map-marker-alt mr-2"></i>San Francisco, USA</a>
+                                </li>
+                                <li class="mt-1">
+                                    <a href="#">
+                                        <i class="fa fa-phone mr-2"></i>0123-456-789</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testimonial">
-                            <div class="pic">
-                                <img src="/assets/home/images/img-1.png" alt="">
-                            </div>
-                            <div class="review">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris tellus, congue sit amet elementum sit amet, imperdiet non erat. Pellentesque finibus nisi rhoncus turpis pellentesque venenatis. Ut nec scelerisque urna, non luctus leo. Aliquam aliquam tempus lectus eu rutrum. Nam vitae nisi dapibus, bibendum metus rutrum eleifend lacus. Suspendisse potenti. Maecenas dolor nunc, interdum id metus sed, euismod tempor mi. Cras orci ex, faucibus in quam</p>
+                    <div class="listing-item p-2">
+                        <div class="img-holder">
+                            <span class="offer">save 19%
+                            </span>
+                            <img src="assets/home/img/home/pl-slide3.jpg" alt="list">
+                            <div class="rate-like centering justify-content-between">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+
+                                <a class="likes" href="#">
+                                    <i class="far fa-heart"></i>6
+                                </a>
                             </div>
                         </div>
-                        <div class="author">	
-                            <h3>John Deo</h3>
-                            <p>Mauris venenatis pulvinar</p>
+                        <div class="list-content p-2">
+                            <ul class="ctg-info py-2 mb-3">
+                                <li>
+                                    <a href="#">
+                                        <i class="flaticon-cheers mr-2"></i>nightlife</a>
+                                </li>
+                                <li>
+                                    <span class="c-theme"> open now</span>
+                                </li>
+                            </ul>
+                            <h5 class="mb-2">
+                                <a href="listing-detail.html">enjoy best nightlife</a>
+                            </h5>
+                            <p>Donec pede justo, fringilla vel, aliquet nectior</p>
+                            <ul class="ctg-info2 pt-2 mt-3 centering justify-content-between">
+                                <li class="mt-1">
+                                    <a href="#">
+                                        <i class="fa fa-map-marker-alt mr-2"></i>San Francisco, USA</a>
+                                </li>
+                                <li class="mt-1">
+                                    <a href="#">
+                                        <i class="fa fa-phone mr-2"></i>0123-456-789</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="testimonial">
-                            <div class="pic">
-                                <img src="/assets/home/images/img-1.png" alt="">
-                            </div>
-                            <div class="review">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mauris tellus, congue sit amet elementum sit amet, imperdiet non erat. Pellentesque finibus nisi rhoncus turpis pellentesque venenatis. Ut nec scelerisque urna, non luctus leo. Aliquam aliquam tempus lectus eu rutrum. Nam vitae nisi dapibus, bibendum metus rutrum eleifend lacus. Suspendisse potenti. Maecenas dolor nunc, interdum id metus sed, euismod tempor mi. Cras orci ex, faucibus in quam</p>
+                    <div class="listing-item p-2">
+                        <div class="img-holder">
+                            <span class="offer">save 59%
+                            </span>
+                            <img src="assets/home/img/home/pl-slide4.jpg" alt="list">
+                            <div class="rate-like centering justify-content-between">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+
+                                <a class="likes" href="#">
+                                    <i class="far fa-heart"></i> 9
+                                </a>
                             </div>
                         </div>
-                        <div class="author">	
-                            <h3>John Deo</h3>
-                            <p>Mauris venenatis pulvinar</p>
+                        <div class="list-content p-2">
+                            <ul class="ctg-info py-2 mb-3">
+                                <li>
+                                    <a href="#">
+                                        <i class="flaticon-spa mr-2"></i>beauty & spa</a>
+                                </li>
+                                <li>
+                                    <span class="c-theme"> open now</span>
+                                </li>
+                            </ul>
+                            <h5 class="mb-2">
+                                <a href="listing-detail.html">best beauty & spa services</a>
+                            </h5>
+                            <p>Donec pede justo, fringilla vel, aliquet nectior</p>
+                            <ul class="ctg-info2 pt-2 mt-3 centering justify-content-between">
+                                <li class="mt-1">
+                                    <a href="#">
+                                        <i class="fa fa-map-marker-alt mr-2"></i>San Francisco, USA</a>
+                                </li>
+                                <li class="mt-1">
+                                    <a href="#">
+                                        <i class="fa fa-phone mr-2"></i>0123-456-789</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="listing-item p-2">
+                        <div class="img-holder">
+                            <span class="offer">save 20%
+                            </span>
+                            <img src="assets/home/img/home/pl-slide5.jpg" alt="list">
+                            <div class="rate-like centering justify-content-between">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                </div>
+
+                                <a class="likes" href="#">
+                                    <i class="far fa-heart"></i> 14
+                                </a>
+                            </div>
+                        </div>
+                        <div class="list-content p-2">
+                            <ul class="ctg-info py-2 mb-3">
+                                <li>
+                                    <a href="#">
+                                        <i class="flaticon-find mr-2"></i>desitination</a>
+                                </li>
+                                <li>
+                                    <span class="c-theme"> open now</span>
+                                </li>
+                            </ul>
+                            <h5 class="mb-2">
+                                <a href="listing-detail.html">best destinations in city</a>
+                            </h5>
+                            <p>Donec pede justo, fringilla vel, aliquet nectior</p>
+                            <ul class="ctg-info2 pt-2 mt-3 centering justify-content-between">
+                                <li class="mt-1">
+                                    <a href="#">
+                                        <i class="fa fa-map-marker-alt mr-2"></i>San Francisco, USA</a>
+                                </li>
+                                <li class="mt-1">
+                                    <a href="#">
+                                        <i class="fa fa-phone mr-2"></i>0123-456-789</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>				
-    </section>			
+    </div>
+</section>
+<!-- popular list end -->
 
 
-<app-footerhome></app-footerhome>
+<!-- cta-one start-->
+<section class="cta-one tri-bg-w text-lg-left text-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 my-lg-0 my-5 py-lg-0 py-5">
+                <div class="cta-content">
+                    <h3>Sign Up To Get Special Offers Every Day</h3>
+                    <p>Lorem ipsum dolor sit amet, consectadetudzdae rcquisc adipiscing elit. Aenean socada commodo ligaui
+                        egets dolor. </p>
+                    <a href="login.html" class="btn btn-two btn-anim mt-2">
+                        sign up
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-lg-block d-none">
+                <div class="cta-img mt-4">
+                    <img src="assets/home/img/home/cta-bg.png" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- cta-one end -->
+
+<!-- features start-->
+<section class="features sp-100-70 bg-w">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="all-title">
+                    <h3 class="sec-title">
+                        Why We Are Best
+                    </h3>
+                    <svg class="title-sep">
+                        <path fill-rule="evenodd" d="M32.000,13.000 L32.000,7.000 L35.000,7.000 L35.000,13.000 L32.000,13.000 ZM24.000,4.000 L27.000,4.000 L27.000,16.000 L24.000,16.000 L24.000,4.000 ZM16.000,-0.000 L19.000,-0.000 L19.000,20.000 L16.000,20.000 L16.000,-0.000 ZM8.000,4.000 L11.000,4.000 L11.000,16.000 L8.000,16.000 L8.000,4.000 ZM-0.000,7.000 L3.000,7.000 L3.000,13.000 L-0.000,13.000 L-0.000,7.000 Z"
+                        />
+                    </svg>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor penatibus
+                        ean massa. Cum sociis natoqu penatibus et magnis dis parturient montes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="feature-item">
+                    <div class="icon-box">
+                        <i class="flaticon-rising"></i>
+                    </div>
+                    <h5>Fixed Price</h5>
+                    <p>The fixed fare is set in every taximeter as the main tariff.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="feature-item">
+                    <div class="icon-box">
+                        <i class="flaticon-list"></i>
+                    </div>
+                    <h5>No Fee</h5>
+                    <p>We guarantee fixed price and you should not pay tips.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="feature-item">
+                    <div class="icon-box">
+                        <i class="flaticon-medal"></i>
+                    </div>
+                    <h5>100% Pleasure</h5>
+                    <p>We have a lot of standing customer and high ratings.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="feature-item">
+                    <div class="icon-box">
+                        <i class="flaticon-find-1"></i>
+                    </div>
+                    <h5>find your listing</h5>
+                    <p>Lorem ipsum dolor sit ame conse castei efte tuerg scn kt iscedring elit ende cd magum socadaiis nato
+                        ipsf.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="feature-item">
+                    <div class="icon-box">
+                        <i class="flaticon-map"></i>
+                    </div>
+                    <h5>find the way</h5>
+                    <p>Lorem ipsum dolor sit ame conse castei efte tuerg scn kt iscedring elit ende cd magum socadaiis nato
+                        ipsf.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <div class="feature-item">
+                    <div class="icon-box">
+                        <i class="flaticon-support"></i>
+                    </div>
+                    <h5>24/7 support</h5>
+                    <p>Lorem ipsum dolor sit ame conse castei efte tuerg scn kt iscedring elit ende cd magum socadaiis nato
+                        ipsf.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- features end -->
+
+<!-- categories start-->
+<section class="categories sp-100-70 bg-dull">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="all-title">
+                    <h3 class="sec-title">
+                        top categories
+                    </h3>
+                    <svg class="title-sep">
+                        <path fill-rule="evenodd" d="M32.000,13.000 L32.000,7.000 L35.000,7.000 L35.000,13.000 L32.000,13.000 ZM24.000,4.000 L27.000,4.000 L27.000,16.000 L24.000,16.000 L24.000,4.000 ZM16.000,-0.000 L19.000,-0.000 L19.000,20.000 L16.000,20.000 L16.000,-0.000 ZM8.000,4.000 L11.000,4.000 L11.000,16.000 L8.000,16.000 L8.000,4.000 ZM-0.000,7.000 L3.000,7.000 L3.000,13.000 L-0.000,13.000 L-0.000,7.000 Z"
+                        />
+                    </svg>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor penatibus
+                        ean massa. Cum sociis natoqu penatibus et magnis dis parturient montes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="ctg-item">
+                    <div class="icon-box" style="background-image:url('assets/home/img/home/cat1.jpg')">
+                        <i class="flaticon-map"></i>
+                    </div>
+                    <div class="content-box p-4">
+                        <h5 class="mb-1">
+                            <a href="listing.html">destination</a>
+                        </h5>
+                        <p class="mb-0">35 Listing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="ctg-item">
+                    <div class="icon-box" style="background-image:url('assets/home/img/home/cat2.jpg')">
+                        <i class="flaticon-cutlery"></i>
+                    </div>
+                    <div class="content-box p-4">
+                        <h5 class="mb-1">
+                            <a href="listing.html">restaurants</a>
+                        </h5>
+                        <p class="mb-0">20 Listing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="ctg-item">
+                    <div class="icon-box" style="background-image:url('assets/home/img/home/cat3.jpg')">
+                        <i class="flaticon-shop"></i>
+                    </div>
+                    <div class="content-box p-4">
+                        <h5 class="mb-1">
+                            <a href="listing.html"> shopping</a>
+                        </h5>
+                        <p class="mb-0">15 Listing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="ctg-item">
+                    <div class="icon-box" style="background-image:url('assets/home/img/home/cat4.jpg')">
+                        <i class="flaticon-hotel"></i>
+                    </div>
+                    <div class="content-box p-4">
+                        <h5 class="mb-1">
+                            <a href="listing.html"> hotels</a>
+                        </h5>
+                        <p class="mb-0">12 Listing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="ctg-item">
+                    <div class="icon-box" style="background-image:url('assets/home/img/home/cat5.jpg')">
+                        <i class="flaticon-spa"></i>
+                    </div>
+                    <div class="content-box p-4">
+                        <h5 class="mb-1">
+                            <a href="listing.html"> Beauty & Spa</a>
+                        </h5>
+                        <p class="mb-0">18 Listing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="ctg-item">
+                    <div class="icon-box" style="background-image:url('assets/home/img/home/cat6.jpg')">
+                        <i class="flaticon-drama"></i>
+                    </div>
+                    <div class="content-box p-4">
+                        <h5 class="mb-1">
+                            <a href="listing.html"> events</a>
+                        </h5>
+                        <p class="mb-0">14 Listing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="ctg-item">
+                    <div class="icon-box" style="background-image:url('assets/home/img/home/cat7.jpg')">
+                        <i class="flaticon-cheers"></i>
+                    </div>
+                    <div class="content-box p-4">
+                        <h5 class="mb-1">
+                            <a href="listing.html"> nightlie</a>
+                        </h5>
+                        <p class="mb-0">25 Listing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-30">
+                <div class="ctg-item">
+                    <div class="icon-box" style="background-image:url('assets/home/img/home/cat8.jpg')">
+                        <i class="flaticon-fast-food"></i>
+                    </div>
+                    <div class="content-box p-4">
+                        <h5 class="mb-1">
+                            <a href="listing.html"> Beauty & Spa</a>
+                        </h5>
+                        <p class="mb-0">10 Listing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- categories end -->
+
+<!-- partner start-->
+<div class="partner-one bg-red py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="partner-slider owl-carousel owl-theme">
+                    <div class="partner-slide">
+                        <img src="assets/home/img/home/partner1.png" alt="partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="assets/home/img/home/partner2.png" alt="partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="assets/home/img/home/partner3.png" alt="partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="assets/home/img/home/partner4.png" alt="partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="assets/home/img/home/partner5.png" alt="partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="assets/home/img/home/partner1.png" alt="partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="assets/home/img/home/partner2.png" alt="partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="assets/home/img/home/partner3.png" alt="partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="assets/home/img/home/partner4.png" alt="partner">
+                    </div>
+                    <div class="partner-slide">
+                        <img src="assets/home/img/home/partner5.png" alt="partner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- partner end-->
+
+<!-- blog start-->
+<section class="sp-100 bg-w">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="all-title">
+                    <h3 class="sec-title">
+                        from our blog
+                    </h3>
+                    <svg class="title-sep">
+                        <path fill-rule="evenodd" d="M32.000,13.000 L32.000,7.000 L35.000,7.000 L35.000,13.000 L32.000,13.000 ZM24.000,4.000 L27.000,4.000 L27.000,16.000 L24.000,16.000 L24.000,4.000 ZM16.000,-0.000 L19.000,-0.000 L19.000,20.000 L16.000,20.000 L16.000,-0.000 ZM8.000,4.000 L11.000,4.000 L11.000,16.000 L8.000,16.000 L8.000,4.000 ZM-0.000,7.000 L3.000,7.000 L3.000,13.000 L-0.000,13.000 L-0.000,7.000 Z"
+                        />
+                    </svg>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor penatibus
+                        ean massa. Cum sociis natoqu penatibus et magnis dis parturient montes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                <div class="blog-item blog-1" style="background-image:url('assets/home/img/blog/blog1.png')">
+                    <div class="blog-date p-2">
+                        <span>11 april 2019</span>
+                    </div>
+                    <div class="blog-content">
+                        <h5>
+                            <a href="blog-detail.html">Nullam quis ante tiam sit ame orci eget erovtiu faucid nbys</a>
+                        </h5>
+                        <ul class="blog-meta d-flex justify-content-between align-items-center">
+                            <li>
+                                <span class="mr-1">
+                                    <img src="assets/home/img/blog/aut-1.png" alt="#">
+                                </span>
+                                <a href="#">Johnathan Doe</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-eye mr-1"></i>
+                                    20
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                <div class="blog-item blog-1" style="background-image:url('assets/home/img/blog/blog2.png')">
+                    <div class="blog-date p-2">
+                        <span>21 april 2019</span>
+                    </div>
+                    <div class="blog-content">
+                        <h5>
+                            <a href="blog-detail.html">Nullam quis ante tiam sit ame orci eget erovtiu faucid nbys</a>
+                        </h5>
+                        <ul class="blog-meta d-flex justify-content-between align-items-center">
+                            <li>
+                                <span class="mr-1">
+                                    <img src="assets/home/img/blog/aut-2.png" alt="#">
+                                </span>
+                                <a href="#">Alicia Thomas</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-eye mr-1"></i>
+                                    20
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+                <div class="blog-item blog-1" style="background-image:url('assets/home/img/blog/blog3.png')">
+                    <div class="blog-date p-2">
+                        <span>01 april 2019</span>
+                    </div>
+                    <div class="blog-content">
+                        <h5>
+                            <a href="blog-detail.html">Nullam quis ante tiam sit ame orci eget erovtiu faucid nbys</a>
+                        </h5>
+                        <ul class="blog-meta d-flex justify-content-between align-items-center">
+                            <li>
+                                <span class="mr-1">
+                                    <img src="assets/home/img/blog/aut-3.png" alt="#">
+                                </span>
+                                <a href="#">Johnis Doe</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-eye mr-1"></i>
+                                    20
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                <div class="blog-item blog-1" style="background-image:url('assets/home/img/blog/blog4.png')">
+                    <div class="blog-date p-2">
+                        <span>09 april 2019</span>
+                    </div>
+                    <div class="blog-content">
+                        <h5>
+                            <a href="blog-detail.html">Nullam quis ante tiam sit ame orci liamco non.</a>
+                        </h5>
+                        <ul class="blog-meta d-flex justify-content-between align-items-center">
+                            <li>
+                                <span class="mr-1">
+                                    <img src="assets/home/img/blog/aut-1.png" alt="#">
+                                </span>
+                                <a href="#">Johnas Doe</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-eye mr-1"></i>
+                                    20
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                <div class="blog-item blog-1" style="background-image:url('assets/home/img/blog/blog5.png')">
+                    <div class="blog-date p-2">
+                        <span>15 april 2019</span>
+                    </div>
+                    <div class="blog-content">
+                        <h5>
+                            <a href="blog-detail.html">Amet incididunt tempor aliqua mollit magna proident sit amet elit nostrud. </a>
+                        </h5>
+                        <ul class="blog-meta d-flex justify-content-between align-items-center">
+                            <li>
+                                <span class="mr-1">
+                                    <img src="assets/home/img/blog/aut-3.png" alt="#">
+                                </span>
+                                <a href="#">Alexi Johnas </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-eye mr-1"></i>
+                                    20
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                <div class="blog-item blog-1" style="background-image:url('assets/home/img/blog/blog6.png')">
+                    <div class="blog-date p-2">
+                        <span>13 april 2019</span>
+                    </div>
+                    <div class="blog-content">
+                        <h5>
+                            <a href="blog-detail.html">Nullam quis ante tiam sit ame orci liamco non.</a>
+                        </h5>
+                        <ul class="blog-meta d-flex justify-content-between align-items-center">
+                            <li>
+                                <span class="mr-1">
+                                    <img src="assets/home/img/blog/aut-2.png" alt="#">
+                                </span>
+                                <a href="#">sehny Doe</a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-eye mr-1"></i>
+                                    20
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 text-center mt-30">
+                <a href="#" class="btn btn-one btn-anim">view all</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- blog end -->
